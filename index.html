@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MeSpeak.js Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      label{
+        display: block;
+        font-weight: bold;
+        color: blue;
+      }
+
+      label::after{                
+        content: ":";        
+      }
+
+    </style>
+
+    <script src="mespeak/mespeak.js"></script>
+    <script>
+      window.addEventListener('load', init);
+
+      function init(){
+        meSpeak.loadVoice('en/en-us');
+
+        const speechForm = document.querySelector('#speechForm');
+        speechForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const fields = new FormData(speechForm);
+          speak(fields.get('text-to-speak'));
+        });
+      }
+
+      function speak(message){
+        meSpeak.speak(message);
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <h1>MeSpeak.js Explorer</h1>
+    <form id="speechForm">
+      <input type="submit" 
+             id="speakButton"
+             value="Speak"></input>
+      <input type="reset"
+             value="Reset"></input>
+      <p>
+        <label for="textToSpeak">Text to Speak</label>
+        <textarea name="text-to-speak" 
+                  id="textToSpeak" 
+                  rows="5"></textarea>
+      </p>
+    </form>    
+
+  </body>
+</html>
