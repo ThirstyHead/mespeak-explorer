@@ -1,0 +1,61 @@
+<speak>
+  <p>
+    Here are some <say-as interpret-as="characters">SSML</say-as> samples.
+  </p>
+
+  <p>  
+    I can pause for a specified amount of time (like 2 seconds) between <break time="2s"/> words.
+  </p>
+
+  <p>
+    I can play a sound. <break time="1s"/>
+    <audio src="https://www.example.com/MY_MP3_FILE.mp3">(I'm sorry, but I couldn't find the mp3 audio file to play.)</audio>.
+  </p>
+
+  <p>
+    <s>Here are some examples of the "say as" element.</s>
+    <s>
+      Numbers can be spoken normally using the "cardinal" attribute, like 
+      <say-as interpret-as="cardinal">1</say-as>
+      <say-as interpret-as="cardinal">2</say-as>
+      <say-as interpret-as="cardinal">3</say-as>.
+    </s>
+
+    <s>
+      Numbers can be spoken like first, second, third using the "ordinal" attribute, like 
+      <say-as interpret-as="ordinal">1</say-as>
+      <say-as interpret-as="ordinal">2</say-as>
+      <say-as interpret-as="ordinal">3</say-as>.
+    </s>
+
+    <s>
+      Individual numbers can be spoken using the "characters" attribute, like 
+      <say-as interpret-as="characters">123</say-as> instead of 123.
+    </s>
+
+    <s>
+      Fractions can be spoken using the "fraction" attribute, like
+      <say-as interpret-as="fraction">1 1/2</say-as>.
+    </s>
+     
+    <s>
+      I can substitute phrases using the "sub" element, like saying the 
+      <sub alias="World Wide Web Consortium">W3C</sub> instead of
+      <say-as interpret-as="characters">W3C</say-as>.
+    </s>
+
+    <s>
+      I can beep out profanity using the "expletive" attribute, but why the 
+      <say-as interpret-as="expletive">heck</say-as>
+      would I want to do that?
+    </s>
+
+    <s>
+      I can properly say units of measure using the "unit" attribute, like
+      <say-as interpret-as="unit">1 foot</say-as>
+      <say-as interpret-as="unit">2 foot</say-as>
+      <say-as interpret-as="unit">3 foot</say-as>.
+    </s>
+ </p>
+  
+</speak>
